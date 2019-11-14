@@ -12,19 +12,22 @@ while True:
         numProbs1 = int(numProbs) #number of problems
         
         print(sectionInput)
+        
 
         if evenOrOdd == 'e' or evenOrOdd == 'E' or evenOrOdd == 'even' or evenOrOdd == 'Even':
-            for i in range(0,2):
+            for i in range(start1, end1 + 1): 
                 if i % 2 == 0: #if i is divisible by 2,
-                    print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
-                    print()
-
+                    pass
+            print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+            print()
         elif evenOrOdd == 'o' or evenOrOdd == 'O' or evenOrOdd == 'odd' or evenOrOdd == 'Odd':
-            for i in range(0,2):
+            for i in range(start1, end1 + 1):
                 if i % 2 != 0: #if i is not divisible by 2,
-                    print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
-                    print()
+                    pass
+            print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+            print()
         elif evenOrOdd == 'b' or evenOrOdd == 'B' or evenOrOdd == 'both' or evenOrOdd == 'Both':
-            for i in range(0,2):
-                print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
-                print()
+            for i in range(start1, end1 + 1):
+                pass
+            print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+            print()
