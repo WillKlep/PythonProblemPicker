@@ -1,29 +1,30 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import random as rand;
 
 while True:
-    sectionInput, start, end, step, numProbs = input("Enter a section title and 4 numbers, commas in between all inputs, or Q to quit: ").split(",")
-    
+    sectionInput = input("Enter section header or Q\q to quit: ")
     if sectionInput == 'q' or sectionInput == 'Q':
-        break
+          quit()
     else:
-        start1 = int(start)
-        end1 = int(end)
-        step1 = int(step)
-        numProbs1 = int(numProbs)
+        evenOrOdd, start, end, numProbs = input("Enter wether you want (e)ven or (o)dd or (b)oth types of problems, start of range, end of range, and amount you want to do, commas in between all inputs: ").strip(" ").split(",")
+    
+        start1 = int(start) #int start of range
+        end1 = int(end) #int end of range
+        numProbs1 = int(numProbs) #number of problems
         
         print(sectionInput)
-        print (sorted(rand.sample(range(start1,end1,step1), numProbs1)), end=" ")
-        print()
 
+        if evenOrOdd == 'e' or evenOrOdd == 'E' or evenOrOdd == 'even' or evenOrOdd == 'Even':
+            for i in range(0,2):
+                if i % 2 == 0: #if i is divisible by 2,
+                    print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+                    print()
 
-# In[ ]:
-
-
-
-
+        elif evenOrOdd == 'o' or evenOrOdd == 'O' or evenOrOdd == 'odd' or evenOrOdd == 'Odd':
+            for i in range(0,2):
+                if i % 2 != 0: #if i is not divisible by 2,
+                    print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+                    print()
+        elif evenOrOdd == 'b' or evenOrOdd == 'B' or evenOrOdd == 'both' or evenOrOdd == 'Both':
+            for i in range(0,2):
+                print(sorted(rand.sample(range(start1,end1), numProbs1)), end=" ")
+                print()
